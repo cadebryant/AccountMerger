@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "9CKO5bye/ZZHhScTyDncfbRkUHNCPg6Vicb/bWcNmjvLuiigPhP+BznMllfOrVXJ/mlndDVrAaL/F+JFd+v+Hg==",
+  "dgSpecHash": "st2UmrXeM1hQ2B6EAYWon9ALyBa8Oma5FsG4vqLJ1WA/hAoQJ+GiPJiHGmeGbfDxjTl+yTl5BoL3qzCZwCqU2A==",
   "success": true,
   "projectFilePath": "D:\\Backup\\Dropbox\\Documents\\Professional\\Assessments\\FEVO\\AccountMerger\\AccountMerger.Application\\AccountMerger.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Cade Bryant\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
