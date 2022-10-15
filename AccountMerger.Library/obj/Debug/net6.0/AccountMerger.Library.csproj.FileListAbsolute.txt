@@ -1,0 +1,12 @@
+D:\Backup\Dropbox\Documents\Professional\Assessments\FEVO\AccountMerger\AccountMerger.Library\bin\Debug\net6.0\AccountMerger.Library.deps.json
+D:\Backup\Dropbox\Documents\Professional\Assessments\FEVO\AccountMerger\AccountMerger.Library\bin\Debug\net6.0\AccountMerger.Library.dll
+D:\Backup\Dropbox\Documents\Professional\Assessments\FEVO\AccountMerger\AccountMerger.Library\bin\Debug\net6.0\AccountMerger.Library.pdb
+D:\Backup\Dropbox\Documents\Professional\Assessments\FEVO\AccountMerger\AccountMerger.Library\obj\Debug\net6.0\AccountMerger.Library.csproj.AssemblyReference.cache
+D:\Backup\Dropbox\Documents\Professional\Assessments\FEVO\AccountMerger\AccountMerger.Library\obj\Debug\net6.0\AccountMerger.Library.GeneratedMSBuildEditorConfig.editorconfig
+D:\Backup\Dropbox\Documents\Professional\Assessments\FEVO\AccountMerger\AccountMerger.Library\obj\Debug\net6.0\AccountMerger.Library.AssemblyInfoInputs.cache
+D:\Backup\Dropbox\Documents\Professional\Assessments\FEVO\AccountMerger\AccountMerger.Library\obj\Debug\net6.0\AccountMerger.Library.AssemblyInfo.cs
+D:\Backup\Dropbox\Documents\Professional\Assessments\FEVO\AccountMerger\AccountMerger.Library\obj\Debug\net6.0\AccountMerger.Library.csproj.CoreCompileInputs.cache
+D:\Backup\Dropbox\Documents\Professional\Assessments\FEVO\AccountMerger\AccountMerger.Library\obj\Debug\net6.0\AccountMerger.Library.dll
+D:\Backup\Dropbox\Documents\Professional\Assessments\FEVO\AccountMerger\AccountMerger.Library\obj\Debug\net6.0\refint\AccountMerger.Library.dll
+D:\Backup\Dropbox\Documents\Professional\Assessments\FEVO\AccountMerger\AccountMerger.Library\obj\Debug\net6.0\AccountMerger.Library.pdb
+D:\Backup\Dropbox\Documents\Professional\Assessments\FEVO\AccountMerger\AccountMerger.Library\obj\Debug\net6.0\ref\AccountMerger.Library.dll

@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace AccountMerger.Library.Model
 {
-    internal class Person : IPerson
+    public class Person : IPerson
     {
-        internal Person()
+        public Person()
         {
             Applications = new HashSet<string>();
             Emails = new HashSet<string>();
             Name = string.Empty;
         }
 
-        internal Person(ISet<string> applications, ISet<string> emails, string name)
+        public Person(ISet<string> applications, ISet<string> emails, string name)
         {
             Applications = applications;
             Emails = emails;
