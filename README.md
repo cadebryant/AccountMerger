@@ -1,5 +1,5 @@
 # AccountMerger
-AccountMerger is a .NET 6 console application which does the following:
+AccountMerger is a .NET 6 console application implemented as a Visual Studio 2022 solution, which does the following:
 1. Reads a JSON input file, [accounts.json](AccountMerger.Application/Data/accounts.json), which is stored in the [Data folder](AccountMerger.Application/Data/) of the [AccountMerger.Application subproject](AccountMerger.Application/).
 2. Deserializes the JSON into an `IEnumerable` of objects that implement the interface `IAccount`.
     - Each `IAccount` entry represents a customer account.
@@ -17,3 +17,8 @@ The merging work is performed in the [`AccountPersonMerger`](AccountMerger.Libra
 
 ## Unit Testing
 This project provides a [unit testing subproject](AccountMerger.UnitTests/), which includes some basic functionality tests, in addition to sample test data (input and expected output) embedded as resources.
+
+## System Requirements
+Editing, debugging, and building the project requires the following:
+- Microsoft's .NET 6.0 platform (or later).
+- Visual Studio 2022 (any edition).
