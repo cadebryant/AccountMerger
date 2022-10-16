@@ -46,12 +46,13 @@ namespace AccountMerger.Library.Merger.Impl
             var allEmails = new Dictionary<string, string>();
             //This stores the emails grouped by their parent:
             var emailGroupings = new Dictionary<string, SortedSet<(string, string)>>();
+            //Likewise, applications:
+            var appGroupings = new Dictionary<string, SortedSet<string>>();
 
             foreach (var sourceItem in source)
             {
                 if (source == null) continue;
-                var skipCount = 0; //Math.Min(sourceItem.Emails.Count - 1, 1);
-                foreach (string email in sourceItem.Emails.Skip(skipCount))
+                foreach (string email in sourceItem.Emails)
                 {
                     parentEmails[email] = email;
                     allEmails[email] = sourceItem.Emails.First();
@@ -60,10 +61,8 @@ namespace AccountMerger.Library.Merger.Impl
 
             foreach (var sourceItem in source)
             {
-                var skipCount = 0; //Math.Min(sourceItem.Emails.Count - 1, 1);
-                string parent = parentEmails.FindRecursively(sourceItem.Emails.Skip(skipCount).First());
-                skipCount = 0; //Math.Min(sourceItem.Emails.Count - 1, 2);
-                foreach (var email in sourceItem.Emails.Skip(skipCount))
+                string parent = parentEmails.FindRecursively(sourceItem.Emails.First());
+                foreach (var email in sourceItem.Emails)
                 {
                     parentEmails[parentEmails.FindRecursively(email)] = parent;
                 }
@@ -71,15 +70,24 @@ namespace AccountMerger.Library.Merger.Impl
 
             foreach (var sourceItem in source)
             {
-                var skipCount = 0; //Math.Min(sourceItem.Emails.Count - 1, 1);
-                string parent = parentEmails.FindRecursively(sourceItem.Emails.Skip(skipCount).First());
-                if (!emailGroupings.ContainsKey(parent))
+                string parentEmail = parentEmails.FindRecursively(sourceItem.Emails.First());
+                if (!emailGroupings.ContainsKey(parentEmail))
                 {
-                    emailGroupings[parent] = new SortedSet<(string, string)>();
+                    emailGroupings[parentEmail] = new SortedSet<(string, string)>();
                 }
-                foreach (var email in sourceItem.Emails.Skip(skipCount))
+                foreach (var email in sourceItem.Emails)
                 {
-                    emailGroupings[parent].Add((email, sourceItem.Name));  
+                    emailGroupings[parentEmail].Add((email, sourceItem.Name));
+                    if (!appGroupings.ContainsKey(parentEmail))
+                    {
+                        appGroupings[parentEmail] = new SortedSet<string>();
+                    }
+                    appGroupings[parentEmail].Add(sourceItem.Application);
+                    if (!appGroupings.ContainsKey(email))
+                    {
+                        appGroupings[email] = new SortedSet<string>();
+                    }
+                    appGroupings[email].Add(sourceItem.Application);
                 }
             }
 
