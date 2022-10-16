@@ -13,8 +13,6 @@ namespace AccountMerger.Library.Merger.Impl
 {
     public class AccountPersonMerger : IObjectMerger<IAccount, Person>
     {
-        private Dictionary<string, List<IAccount>> _emailGroupings = new Dictionary<string, List<IAccount>>();
-
         public IEnumerable<Person> Merge(IEnumerable<IAccount> source)
         {
             //This will never happen with the sample data,

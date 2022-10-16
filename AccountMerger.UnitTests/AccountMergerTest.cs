@@ -27,7 +27,7 @@ namespace AccountMerger.UnitTests
         }
 
         [TestMethod]
-        public async Task TestCanMergeObjects()
+        public async Task TestCanMergeObjects_HappyPath()
         {
             _accountsJson = await UnitTestHelper.GetTestAccountRecords();
             Assert.IsNotNull(_accountsJson);
@@ -38,6 +38,33 @@ namespace AccountMerger.UnitTests
             var serialized = JsonConvert.SerializeObject(mergedPersons, _jsonSettings);
             Assert.IsNotNull(serialized);
             _expResultsJson =  await UnitTestHelper.GetTestExpectedResult();
+            var deser = JsonConvert.DeserializeObject<IEnumerable<Person>>(_expResultsJson, _jsonSettings);
+            Assert.IsNotNull(deser);
+            Assert.AreEqual(deser.Count(), mergedPersons.Count());
+            foreach (var personTup in mergedPersons.Zip(deser))
+            {
+                Assert.AreEqual(personTup.First.Name, personTup.Second.Name);
+                Assert.AreEqual(
+                    String.Join("", personTup.First.Emails.OrderBy(e => e)),
+                    String.Join("", personTup.Second.Emails.OrderBy(e => e)));
+                Assert.AreEqual(
+                    String.Join("", personTup.First.Applications.OrderBy(a => a)),
+                    String.Join("", personTup.Second.Applications.OrderBy(a => a)));
+            }
+        }
+
+        [TestMethod]
+        public async Task TestCanMergeObjects_MassiveDataset()
+        {
+            _accountsJson = await UnitTestHelper.GetTestAccountRecords(true);
+            Assert.IsNotNull(_accountsJson);
+            var accounts = JsonConvert.DeserializeObject<IEnumerable<Account>>(_accountsJson, _jsonSettings);
+            Assert.IsNotNull(accounts);
+            var mergedPersons = _merger.Merge(accounts);
+            Assert.IsNotNull(mergedPersons);
+            var serialized = JsonConvert.SerializeObject(mergedPersons, _jsonSettings);
+            Assert.IsNotNull(serialized);
+            _expResultsJson = await UnitTestHelper.GetTestExpectedResult();
             var deser = JsonConvert.DeserializeObject<IEnumerable<Person>>(_expResultsJson, _jsonSettings);
             Assert.IsNotNull(deser);
             Assert.AreEqual(deser.Count(), mergedPersons.Count());

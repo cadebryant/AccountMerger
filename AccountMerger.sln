@@ -5,9 +5,14 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccountMerger.Application", "AccountMerger.Application\AccountMerger.Application.csproj", "{F90C7E28-436B-4B67-8B90-DF0ABDFDE406}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountMerger.Library", "AccountMerger.Library\AccountMerger.Library.csproj", "{7028A2B0-C5B2-400F-BFA3-EE2E5192ECC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccountMerger.Library", "AccountMerger.Library\AccountMerger.Library.csproj", "{7028A2B0-C5B2-400F-BFA3-EE2E5192ECC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountMerger.UnitTests", "AccountMerger.UnitTests\AccountMerger.UnitTests.csproj", "{E077A05F-47F7-47A2-95E0-FBD274389063}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccountMerger.UnitTests", "AccountMerger.UnitTests\AccountMerger.UnitTests.csproj", "{E077A05F-47F7-47A2-95E0-FBD274389063}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{823458D4-DB3C-4729-91B8-A842BFAC30A4}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

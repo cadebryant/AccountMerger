@@ -11,6 +11,7 @@ namespace AccountMerger.UnitTests
     internal static class UnitTestHelper
     {
         private static string _accountsFileName = Path.Combine("Resources.accounts.json");
+        private static string _massiveAccountsFileName = Path.Combine("Resources.accountsMassiveDataset.json");
         private static string _resultsFileName = Path.Combine("Resources.expectedResult.json");
 
         internal static Stream GetEmbeddedResourceFileStream(this Assembly assembly, string fileName)
@@ -30,9 +31,10 @@ namespace AccountMerger.UnitTests
             return stream;
         }
 
-        internal static async Task<string> GetTestAccountRecords()
+        internal static async Task<string> GetTestAccountRecords(bool useMassiveDataset = false)
         {
-            using (var fileStream = Assembly.GetExecutingAssembly().GetEmbeddedResourceFileStream(_accountsFileName))
+            var filePath = useMassiveDataset ? _massiveAccountsFileName : _accountsFileName;
+            using (var fileStream = Assembly.GetExecutingAssembly().GetEmbeddedResourceFileStream(filePath))
             {
                 using (var reader = new StreamReader(fileStream))
                 {
