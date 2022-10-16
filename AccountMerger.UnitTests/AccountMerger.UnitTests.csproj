@@ -10,10 +10,12 @@
 
   <ItemGroup>
     <None Remove="Resources\accounts.json" />
+    <None Remove="Resources\ExpectedResult.json" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\accounts.json" />
+    <EmbeddedResource Include="Resources\expectedResult.json" />
   </ItemGroup>
 
   <ItemGroup>

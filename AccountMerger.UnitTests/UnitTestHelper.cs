@@ -10,6 +10,9 @@ namespace AccountMerger.UnitTests
 {
     internal static class UnitTestHelper
     {
+        private static string _accountsFileName = Path.Combine("Resources.accounts.json");
+        private static string _resultsFileName = Path.Combine("Resources.expectedResult.json");
+
         internal static Stream GetEmbeddedResourceFileStream(this Assembly assembly, string fileName)
         {
             if (assembly == null)
@@ -25,6 +28,28 @@ namespace AccountMerger.UnitTests
             if (stream == null)
                 throw new ArgumentException($"Embedded resource file '{fileName}' could not be found.");
             return stream;
+        }
+
+        internal static async Task<string> GetTestAccountRecords()
+        {
+            using (var fileStream = Assembly.GetExecutingAssembly().GetEmbeddedResourceFileStream(_accountsFileName))
+            {
+                using (var reader = new StreamReader(fileStream))
+                {
+                    return await reader.ReadToEndAsync();
+                }
+            }
+        }
+
+        internal static async Task<string> GetTestExpectedResult()
+        {
+            using (var fileStream = Assembly.GetExecutingAssembly().GetEmbeddedResourceFileStream(_resultsFileName))
+            {
+                using (var reader = new StreamReader(fileStream))
+                {
+                    return await reader.ReadToEndAsync();
+                }
+            }
         }
     }
 }

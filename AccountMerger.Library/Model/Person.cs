@@ -23,6 +23,12 @@ namespace AccountMerger.Library.Model
             Name = name;
         }
 
+        public static IEnumerable<IPerson> FromAccounts(IEnumerable<Account> accounts)
+        {
+            var persons = new List<IPerson>();
+            return persons;
+        }
+
         public ISet<string> Applications { get; set; }
         public ISet<string> Emails { get; set; }
         public string Name { get; set; }
