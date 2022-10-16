@@ -100,6 +100,7 @@ namespace AccountMerger.Library.Merger.Impl
                 {
                     person.Emails.Add(entry.Item1);
                 }
+                person.Applications = appGroupings[group.Key];
                 personList.Add(person);
             }
             return personList;
