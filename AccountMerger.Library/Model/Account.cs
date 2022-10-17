@@ -16,13 +16,6 @@ namespace AccountMerger.Library.Model
             Name = string.Empty;
         }
 
-        public Account(string application, ISet<string> emails, string name)
-        {
-            Application = application;
-            Emails = emails;
-            Name = name;
-        }
-
         public string Application { get; set; }
         public ISet<string> Emails { get; set; }
         public string Name { get; set; }

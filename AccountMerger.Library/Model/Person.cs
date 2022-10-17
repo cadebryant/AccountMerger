@@ -16,19 +16,6 @@ namespace AccountMerger.Library.Model
             Name = string.Empty;
         }
 
-        public Person(ISet<string> applications, ISet<string> emails, string name)
-        {
-            Applications = applications;
-            Emails = emails;
-            Name = name;
-        }
-
-        public static IEnumerable<IPerson> FromAccounts(IEnumerable<Account> accounts)
-        {
-            var persons = new List<IPerson>();
-            return persons;
-        }
-
         public ISet<string> Applications { get; set; }
         public ISet<string> Emails { get; set; }
         public string Name { get; set; }
